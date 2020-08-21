@@ -5,20 +5,20 @@
     <PreFlow name="PreFlow">
         <Request>
             <Step>
-                <Name>FC-BasicAuthentication</Name>
+                <Name>Basic-Authentication</Name>
             </Step>
             <Step>
-                <Name>QO-CheckQuota</Name>
+                <Name>check-quota</Name>
             </Step>
             <Step>
-                <Name>AM-AddCors</Name>
+                <Name>add-cors</Name>
                 <Condition>request.verb == "OPTIONS"</Condition>
                 <!--Handle preflight OPTIONS calls for cross origin requests-->
             </Step>
         </Request>
         <Response>
                 <Step>
-                    <Name>RC-ResponseCache</Name>
+                    <Name>Response-Cache-1</Name>
                 </Step>
         </Response>
     </PreFlow>
@@ -34,7 +34,7 @@
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="preflight">
-        <Condition>request.verb == "OPTIONS" and request.header!=""</Condition>
+        <Condition>request.verb == "OPTIONS" and request.header!="abcdefghijklmnopqrstuvlxyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"</Condition>
     </RouteRule>
     <RouteRule name="default">
         <TargetEndpoint>default</TargetEndpoint>
