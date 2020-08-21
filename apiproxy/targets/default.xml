@@ -13,8 +13,6 @@
     <Flows/>
     <HTTPTargetConnection>
         <Properties/>
-    <LoadBalancer>
-        <Server name="target1"/>
-      </LoadBalancer>
+        <URL>http://mocktarget.apigee.net</URL>
     </HTTPTargetConnection>
 </TargetEndpoint>
